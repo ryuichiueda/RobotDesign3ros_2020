@@ -18,6 +18,12 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 * ガイダンス
 
+---
+
+## 本コースでやること
+
+* マニピュレーターCRANE-X7の制御
+
 
 ---
 
