@@ -70,7 +70,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 ## スケジュール（1/3）
 
 * 第1回: ガイダンス
-* 第2回: ROSのセットアップ
+* 第2回: WSLとROSのセットアップ
 * 第3回: Gitの使い方
 * 第4回: GitHubの使い方、チーム分け
 
