@@ -50,7 +50,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 * シミュレータを利用して開発
 * 中間発表と期末発表で作成したソフトウェアをTAが動かす
-* 前半に講義、後半作業
+* 前半にちょっとした講義、後半作業
     * 作業時間をとるために前半の講義ビデオは事前に公開することも検討
 
 ---
