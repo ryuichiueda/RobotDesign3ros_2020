@@ -59,5 +59,15 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 * 第1回: ガイダンス
 * 第2回: ROSのセットアップ
-* 第3回: GitHubの使い方
+* 第3回: Gitの使い方
+* 第4回: GitHubの使い方、チーム分け
+* 第5回: 作業
+* 第6回: 作業
+* 第7回: 作業
+* 第8回: 中間発表
+* 第9回: 作業
+* 第10回: 作業
+* 第11回: 作業
+* 第12回: 作業
+* 第13回: 最終発表
 
