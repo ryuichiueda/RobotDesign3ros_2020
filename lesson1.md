@@ -19,3 +19,10 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 * ガイダンス
 
 ---
+
+## スケジュール
+
+* 第1回: ガイダンス
+* 第2回: ROSのセットアップ
+* 第3回: GitHubの使い方
+
