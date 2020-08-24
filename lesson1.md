@@ -24,6 +24,12 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 * マニピュレーターCRANE-X7の制御
 
+---
+
+## なにが学べるか
+
+* ROS
+* マニピュレーターの制御
 
 ---
 
@@ -32,6 +38,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 * 実機がない状況、互いにリモートな状況でどのように開発を進めるか、を意識する
     * 企業ではハードが揃わないうちにソフトウェア開発が始まる
     * 複数人で
+    * 重要: 実機があれば経験値が上がるわけではない
 * 様々なツールを活用
     * Git
     * シミュレータ
