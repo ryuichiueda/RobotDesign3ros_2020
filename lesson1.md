@@ -109,4 +109,5 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
     * コードを書くのが好きではない
         * チームで仕事をするので面白い仕事がまわってこないかも
     * オンライン上のコミュニケーションに興味がない人
+    * 自身やチームが何を成し遂げるかより個別の技術に興味が行きがちな人
 
