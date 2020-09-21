@@ -1,6 +1,6 @@
-# 設計製作論実習3（知能コース）
+# 設計製作論実習3
 
-## イントロダクション
+## 第1回
 
 千葉工業大学 上田 隆一
 
@@ -14,99 +14,206 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 ---
 
-## 本コースでやること
+## 今日やること
 
-* マニピュレーターCRANE-X7の制御
-    * ムービー: https://lab.ueda.tech/?page=robotdesign3_2019_ros<br />　
-    * 「今年はリモートでやるのにどうするの？」という話はあとで
+* （見ていない人は）イントロダクションのビデオを見る
+  * ビデオを見た人はWSLのインストールをしながら待つ
+* Slackへの参加
+* WSLのインストール
 
----
-
-## なにが学べるか
-
-* マニピュレーターの制御理論・・・は二の次かも<br />　
-* ソフトウェアの迅速な開発に主眼を置く
-    * ROSやオープンソース、先輩のソースコードを使いこなして動くものをどんどん作っていく
-    * 今年度は特に、実機がない状況、互いにリモートな状況でどのように開発を進めるか、がテーマ
-        * 次ページ
 
 ---
 
-## チームでのソフトウェア開発
+## ROSのセットアップ
 
-* 企業ではハードが揃わないうちにソフトウェア開発が始まることがある
-    * 最も分かりやすい例: 航空機
-    * 入出力をしっかり定義して確認しながら開発を進める<br />　
-* 複数人での開発をどうするか
-    * コードを同時並行で記述する
-    * しっかり予定や意図を（ストレスをかけることなく）伝える
+Windows編
 
 ---
 
-## ツール
+### WSLでのROS環境構築
 
-* LinuxあるいはWindowsのWSL（Windows Subsystem for Linux）環境
-* ROS、Gazebo
-* Slack、（Backlog？）
-* GitHub
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ZMpj_mBggjw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
-
-## 進め方
-
-* 前半にちょっとした講義、後半作業
-    * 作業時間をとるために前半の講義ビデオは事前に公開することも検討
-* シミュレータを利用して開発
-* 中間発表と期末発表で作成したソフトウェアを実機で動作させる
-    * TAがリモートで
-    * もしかしたら開発中もTAがリモートで動かしてくれるかも
+* 使うツール
+    * WSL: [Windows Subsystem for Linux](https://ja.wikipedia.org/wiki/Windows_Subsystem_for_Linux)
+    * ROS: [robot operating system](http://wiki.ros.org/)
+* 参考にしたサイト
+    * WSL+ROS
+        * [WSL(Windows Subsystem for Linux)でROSを動かす | naonaorange's blog](https://naonaorange.hatenablog.com/entry/2018/11/05/200715)
+        * [WSL: Windows Subsystem for Linuxのインストールと設定 | demura.net](https://demura.net/lecture/15062.html)
+        * [WSL: RvizやGazeboが起動しない | demura.net](https://demura.net/lecture/15304.html)
+        * 注意: 参考になりますが、以後のスライドと設定が微妙に異なります。
+    * SSH接続について
+        * https://yuta0508.hatenablog.com/entry/2018/05/03/195616
 
 ---
 
-## スケジュール（1/3）
+### WSLのインストール
 
-* 第1回: ガイダンス
-* 第2回: WSLとROSのセットアップ
-* 第3回: チーム分け
-    * （この頃ロボットシステム学でGitとGitHubをやります）
+* Ubuntu 18.04 LTSをインストール（左図）
+* 使えるようにシステムを設定（右図）
 
----
+<img width="56%" src="./figs/ubuntu18_download.png" />
+<img width="40%" src="./figs/wsl_enable.png" />
 
-## スケジュール（2/3）
-
-* 4〜8回: センサを使わないでロボットに仕事をさせる
-    * 第4回: プレゼン
-    * 第5回: 作業
-    * 第6回: 作業
-    * 第7回: 作業
-    * 第8回: 中間発表
-
-やりちらかしではなくてプロジェクトとして<br />まとめることを重視
 
 ---
 
-## スケジュール（3/3）
+### ROSのインストール
 
-* 9〜13回: センサを使ってロボットに仕事をさせる
-    * 第9回: プレゼン
-    * 第10回: 作業
-    * 第11回: 作業
-    * 第12回: 作業
-    * 第13回: 最終発表
+* GitHub上のインストールスクリプトを利用
+    * https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu18.04_desktop
 
-やりちらかしではなくてプロジェクトとして<br />まとめることを重視（重要なので2回言いました）
+```
+$ git clone https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu18.04_desktop.git
+$ cd ros_setup_scripts_Ubuntu18.04_desktop/
+$ sudo apt update
+$ sudo apt upgrade
+$ ./locale.ja.bash
+$ ./step0.bash
+$ ./step1.bash
+```
 
 ---
 
-## 向いている人、向いていない人
+### 動作確認
 
-* 向いている人
-    * ROSの経験を積みたいと考えている人
-    * マニピュレータをぐわんぐわん動かしたい人<br />　
-* 向いていない人
-    * コードを書くのが好きではない
-        * チームで仕事をするので面白い仕事がまわってこないかも
-    * オンライン上のコミュニケーションに興味がない人
+```
+$ source ~/.bashrc
+$ roscore
+... logging to /home/ueda/.ros/log/d26a0c78-b52f-11e9-a961-001c4252779e/roslaunch-1C7F-429.log
+Checking log directory for disk usage. This may take awhile.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
 
+started roslaunch server http://localhost:49975/
+ros_comm version 1.14.3
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: melodic
+ * /rosversion: 1.14.3
+
+NODES
+
+auto-starting new master
+process[master]: started with pid [439]
+ROS_MASTER_URI=http://localhost:11311/
+
+setting /run_id to d26a0c78-b52f-11e9-a961-001c4252779e
+process[rosout-1]: started with pid [450]
+started core service [/rosout]
+```
+
+* Windowsがネットワークのアクセスがどうのこうのと文句を言ってきたら「許可」で
+* プログラムの終了は`Ctrl+C`で
+
+---
+
+### ワークスペースの作成
+
+* ワークスペース: プログラム置き場です
+```
+$ cd
+$ mkdir -p catkin_ws/src
+$ cd catkin_ws/src
+$ catkin_init_workspace
+Creating symlink "/home/ueda/catkin_ws/...
+$ cd ..
+$ catkin_make
+```
+
+* 次いで`~/.bashrc`を編集
+```
+$ vi ~/.bashrc
+・・・
+source /opt/ros/melodic/setup.bash
+source ~/catkin_ws/devel/setup.bash             #この行を追加
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_HOSTNAME=localhost
+・・・
+$ source ~/.bashrc
+$ cd ~/catkin_ws/
+$ catkin_make
+```
+
+---
+
+### CRANE-X7のROSパッケージを<br />インストール
+
+```
+$ cd ~/catkin_ws/src
+$ git clone https://github.com/rt-net/crane_x7_ros.git
+$ git clone https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins.git
+$ rosdep install -r -y --from-paths --ignore-src crane_x7_ros
+・・・
+$ ( cd ~/catkin_ws/ && catkin_make )
+```
+
+---
+
+### X Window Systemのインストール
+
+* X Window System: Unix系OSのGUIのシステム
+    * データを受けて絵を受けるOSとは独立したプログラム
+* プロトコルが決まっているのでXならなんでもいいけどここではXmingをインストール
+    * [OSDNのXmingのページ](https://ja.osdn.net/projects/sfnet_xming/)から`Xming-6-9-0-31-setup.exe`をインストール
+    * `Xming-fonts-7-7-0-10-setup.exe`もインストール
+    * 指示は全部デフォルトのままでよいです
+
+---
+
+### X Window Systemのセットアップ
+
+* Xmingが立ち上がっていることを確認
+<img width="40%" src="./figs/xserver.png" />
+* `~/.bashrc`に設定を書く
+```
+・・・
+export DISPLAY=localhost:0.0   #0.0は上の絵のポップアップで出てくる数字に合わせる
+export LIBGL_ALWAYS_INDIRECT=0
+export GAZEBO_IP=127.0.0.1
+```
+    * 一番下に書いておけばよいです
+
+---
+
+### RVizの動作確認
+
+```
+$ source ~/.bashrc
+$ roscore &
+（しばらく待つ）
+$ rviz
+```
+
+<img width="60%" src="./figs/rviz.png" />
+
+
+---
+
+### Gazeboの動作確認
+
+* `~/.ignition/fuel/config.yaml`を編集
+```
+servers:
+  -
+    name: osrf
+    url: https://api.ignitionrobotics.org #ignitionroboticsに
+```
+* CRANE-X7のサンプルを立ち上げる
+```
+$ roslaunch crane_x7_gazebo crane_x7_with_table.launch
+```
+
+<img width="45%" src="./figs/gazebo_rviz.jpeg" />
+
+---
+
+### 不具合の証言
+
+* すんなりいかない場合もあります
+    * 上田研OB小池さんから
+        * GAZEBOの動作確認の「`~/.ignition/fuel/config.yaml`を編集」のところで、ignitionフォルダが最初がなく、1度Gazeboを立上げたら生成された
+        * 最初`crane_x7_with_table.launch`を起動させたらGazeboの画面がしばらく放置しても真っ黒のままだった。Ctrl+Cした後、`empty_world.launch`を立上げたら普通に表示されたので、もう一度`crane_x7_with_table.launch`を起動したら表示された

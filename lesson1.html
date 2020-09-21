@@ -6,9 +6,9 @@
 
 		<title>設計製作論実習3</title>
 
-		<link rel="stylesheet" href="../css/reset.css">
-		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/white.css">
+		<link rel="stylesheet" href="./css/reset.css">
+		<link rel="stylesheet" href="./css/reveal.css">
+		<link rel="stylesheet" href="./css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="./lib/css/monokai.css">
@@ -18,7 +18,7 @@
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? './css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
@@ -33,12 +33,12 @@
                 <div id="hidden" style="display:none;">
                     <div id="header">
 			<div id="header-left">設計製作論実習3</div>
-			<div id="header-right">lesson 1</div>
+			<div id="header-right">lesson 2</div>
 			<div id="footer-left"></div>
                     </div>
                 </div>
 
-		<script src="../js/reveal.js"></script>
+		<script src="./js/reveal.js"></script>
 
 		<script>
 			// More info about config & dependencies:
@@ -46,11 +46,11 @@
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
 				dependencies: [
-					{ src: '../plugin/math/math.js' },
-					{ src: '../plugin/markdown/marked.js' },
-					{ src: '../plugin/markdown/markdown.js' },
-					{ src: '../plugin/notes/notes.js', async: true },
-					{ src: '../plugin/highlight/highlight.js', async: true }
+					{ src: './plugin/math/math.js' },
+					{ src: './plugin/markdown/marked.js' },
+					{ src: './plugin/markdown/markdown.js' },
+					{ src: './plugin/notes/notes.js', async: true },
+					{ src: './plugin/highlight/highlight.js', async: true }
 				]
 			});
 		</script>
