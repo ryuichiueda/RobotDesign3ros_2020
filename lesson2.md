@@ -14,18 +14,13 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 ---
 
-## <span style="text-transform:none">MoveIt!</span>を使う
+## 今日の内容
 
-* [マニピュレータの制御とMoveIt!の利用](https://gbiggs.github.io/ros_moveit_rsj_tutorial/manipulators_and_moveit.html)
-
----
-
-### 題材
-
-* CRANE-X7のROSパッケージ
-    * まずは[README](https://github.com/rt-net/crane_x7_ros/blob/master/README.md)をよく読む
+* Move It!を使う
+* サンプルコードを動かす
+    * CRANE-X7のROSパッケージ
+    *     [README](https://github.com/rt-net/crane_x7_ros/blob/master/README.md)はこちら
         * 実機についての言及がありますが、まだ実機は扱いません
-        * Gazeboのシミュレーションのところをよく読みましょう
 
 ---
 
@@ -65,7 +60,7 @@ $ roslaunch crane_x7_gazebo crane_x7_with_table.launch
 ```
 $ roslaunch crane_x7_gazebo crane_x7_with_table.launch
 ```
-<img width="50%" src="../figs/gazebo_hand.png" />
+<img width="50%" src="./figs/gazebo_hand.png" />
 * サンプルプログラムのディレクトリに移動
 ```
 $ cd ~/catkin_ws/src/crane_x7_ros/crane_x7_examples/scripts/
@@ -135,7 +130,7 @@ $ rosdep install -r -y --from-paths --ignore-src crane_x7_ros
 ```
 $ source ~/.bashrc
 （別の端末を開いて）$ roslaunch crane_x7_gazebo crane_x7_with_table.launch 
-$ $ rosrun crane_x7_examples pose_groupstate_example.py 
+$ rosrun crane_x7_examples pose_groupstate_example.py 
 ```
 
 ---
@@ -153,3 +148,5 @@ $ git add -A
 $ git commit -m "Change a sample"
 $ git push
 ```
+
+<span style="font-size:50%">・・・なんですけどまだGitHubやってないので次回以降。</span>
